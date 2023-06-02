@@ -32,7 +32,7 @@ async def init():
         and not config.SPOTIFY_CLIENT_SECRET
     ):
         LOGGER("VipX").warning(
-            "Sur spotify id aur secret toh daala hi nahi aapne ab toh spotify se nahi chala paaoge gaane."
+            "Bas Bajna Chahie Gaana."
         )
     try:
         users = await get_gbanned()
@@ -52,12 +52,12 @@ async def init():
     await userbot.start()
     await Vip.start()
     try:
-        await Vip.stream_decall("https://telegra.ph/file/de3464aa7d6bfafdd2dc3.mp4")
+        await Vip.stream_decall("https://te.legra.ph/file/2e9758c388529e2bb70f7.mp4")
     except:
         pass
     try:
         await Vip.stream_call(
-            "https://te.legra.ph/file/29f784eb49d230ab62e9e.mp4"
+            "https://te.legra.ph/file/2e9758c388529e2bb70f7.mp4"
         )
     except NoActiveGroupCall:
         LOGGER("VipX").error(
@@ -67,7 +67,7 @@ async def init():
     except:
         pass
     await Vip.decorators()
-    LOGGER("VipX").info("╔═════ஜ۩۞۩ஜ════╗\n  ♨️𝗠𝗔𝗗𝗘 𝗕𝗬 𝗩𝗜𝗣 𝗕𝗢𝗬♨️\n╚═════ஜ۩۞۩ஜ════╝")
+    LOGGER("VipX").info("╚══ ≪ °❈° ≫ ══╝\n  🎧𝐌𝐀𝐃𝐄 𝐁𝐘 𝐀𝐍𝐒𝐇 𝐁𝟒𝐁𝐘🎧\n╚══ ≪ °❈° ≫ ══╝")
     await idle()
 
 
