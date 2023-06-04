@@ -30,16 +30,16 @@ class VipXBot(Client):
         a = await self.get_chat_member(config.LOG_GROUP_ID, self.id)
         if a.status != "administrator":
             LOGGER(__name__).error(
-                "𝐏𝐥𝐞𝐚𝐬𝐞 𝐩𝐫𝐨𝐦𝐨𝐭𝐞 𝐁𝐨𝐭 𝐚𝐬 𝐀𝐝𝐦𝐢𝐧 𝐢𝐧 𝐋𝐨𝐠𝐠𝐞𝐫 𝐆𝐫𝐨𝐮𝐩"
+                "Please promote Bot as Admin in Logger Group"
             )
             sys.exit()
-        LOGGER(__name__).info(f"AnshuxMusicBot Started as {self.name}")
+        LOGGER(__name__).info(f"MusicBot Started as {self.name}")
         try:
             await self.send_message(
                 config.LOG_GROUP_ID, f"**» {config.MUSIC_BOT_NAME} 𝐁𝐨𝐭 𝐒𝐭𝐚𝐫𝐭𝐞𝐝 𝐛𝐚𝐛𝐲😉 **\n\n👀 𝐈𝐃 : `{self.id}`\n🥵𝐍𝐀𝐌𝐄 : {self.name}\n🖤 𝐔𝐒𝐄𝐑𝐍𝐀𝐌𝐄 : @{self.username}"
             )
         except:
             LOGGER(__name__).error(
-                "𝐁𝐨𝐭 𝐡𝐚𝐬 𝐟𝐚𝐢𝐥𝐞𝐝 𝐭𝐨 𝐚𝐜𝐜𝐞𝐬𝐬 𝐭𝐡𝐞 𝐥𝐨𝐠 𝐆𝐫𝐨𝐮𝐩. 𝐌𝐚𝐤𝐞 𝐬𝐮𝐫𝐞 𝐭𝐡𝐚𝐭 𝐲𝐨𝐮 𝐡𝐚𝐯𝐞 𝐚𝐝𝐝𝐞𝐝 𝐲𝐨𝐮𝐫 𝐛𝐨𝐭 𝐭𝐨 𝐲𝐨𝐮𝐫 𝐥𝐨𝐠 𝐜𝐡𝐚𝐧𝐧𝐞𝐥 𝐚𝐧𝐝 𝐩𝐫𝐨𝐦𝐨𝐭𝐞𝐝 𝐚𝐬 𝐚𝐝𝐦𝐢𝐧!"
+                "Bot has failed to access the log Group. Make sure that you have added your bot to your log channel and promoted as admin!"
             )
             sys.exit()
