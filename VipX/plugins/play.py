@@ -578,12 +578,12 @@ async def play_music(client, CallbackQuery, _):
 
 
 @app.on_callback_query(
-    filters.regex("AnonymousAdmin") & ~BANNED_USERS
+    filters.regex("AnshuxAdmin") & ~BANNED_USERS
 )
 async def anonymous_check(client, CallbackQuery):
     try:
         await CallbackQuery.answer(
-            "ʏᴏᴜ'ʀᴇ ᴀɴ ᴀɴᴏɴʏᴍᴏᴜs ᴀᴅᴍɪɴ\n\nʀᴇᴠᴇʀᴛ ʙᴀᴄᴋ ᴛᴏ ᴜsᴇʀ ᴀᴄᴄᴏᴜɴᴛ ғᴏʀ ᴜsɪɴɢ ᴍᴇ.",
+            "ʏᴏᴜ'ʀᴇ ᴀɴ Anshux ᴀᴅᴍɪɴ\n\nʀᴇᴠᴇʀᴛ ʙᴀᴄᴋ ᴛᴏ ᴜsᴇʀ ᴀᴄᴄᴏᴜɴᴛ ғᴏʀ ᴜsɪɴɢ ᴍᴇ.",
             show_alert=True,
         )
     except:
@@ -591,7 +591,7 @@ async def anonymous_check(client, CallbackQuery):
 
 
 @app.on_callback_query(
-    filters.regex("VipPlaylists") & ~BANNED_USERS
+    filters.regex("AnshuxPlaylists") & ~BANNED_USERS
 )
 @languageCB
 async def play_playlists_command(client, CallbackQuery, _):
