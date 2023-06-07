@@ -34,12 +34,12 @@
       },
       "MUSIC_BOT_NAME": {
         "description": "𝐀 𝐍𝐀𝐌𝐄 𝐅𝐎𝐑 𝐘𝐎𝐔𝐑 𝐌𝐔𝐒𝐈𝐂 𝐁𝐎𝐓. 𝐀𝐋𝐖𝐀𝐘𝐒 𝐖𝐑𝐈𝐓𝐄 𝐈𝐍 𝐒𝐈𝐌𝐏𝐋𝐄 𝐋𝐄𝐓𝐓𝐄𝐑",
-        "value": "TG X MUSIC",
+        "value": "AnshuX Music",
         "required": true
       },
       "OWNER_ID": {
         "description": "𝐅𝐈𝐋𝐋 𝐇𝐄𝐑𝐄 𝐎𝐖𝐍𝐄𝐑 𝐈𝐃, 𝐔 𝐂𝐀𝐍 𝐔𝐒𝐄 𝐌𝐎𝐑𝐄 𝐏𝐄𝐑𝐒𝐎𝐍 𝐈𝐃 𝐁𝐘 𝐆𝐈𝐕𝐄𝐈𝐍𝐆 𝐒𝐏𝐀𝐂𝐄 𝐀𝐅𝐓𝐄𝐑 𝐎𝐍𝐄 𝐈𝐃.",
-        "value": "1808943146",
+        "value": "1674370115",
         "required": true
       },
       "STRING_SESSION": {
@@ -70,7 +70,7 @@
 
        "description": "𝐅𝐈𝐋𝐋 𝐇𝐄𝐑𝐄 𝐘𝐎𝐔𝐑 𝐂𝐇𝐀𝐍𝐍𝐄𝐋 𝐔𝐒𝐄𝐑𝐍𝐀𝐌𝐄 ( 𝗪𝗜𝗧𝗛𝗢𝗨𝗧 @ ). ",
 
-       "value": "VIP_CREATORS",
+       "value": "Best_friends_chat_group",
 
        "required": true
 
