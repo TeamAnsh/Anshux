@@ -809,15 +809,13 @@ def playlist_markup(_, videoid, user_id, ptype, channel, fplay):
 
             ),
 
-        ],
-
-        [
+      
 
           
 
        
 
-    ]
+    
 
     return buttons
 ## Slider Query Markup
@@ -893,15 +891,7 @@ close_keyboard = InlineKeyboardMarkup(
 
             [
 
-                [
-
-                    InlineKeyboardButton(
-
-                        text="✯ ᴄʟᴏsᴇ ✯", callback_data="close"
-
-                    )
-
-                ]    
+                  
 
             ]
 
