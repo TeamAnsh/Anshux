@@ -770,19 +770,8 @@ def livestream_markup(_, videoid, user_id, mode, channel, fplay):
 
             ),
 
-        ],
+       
 
-        [
-
-            InlineKeyboardButton(
-
-                text=_["CLOSEMENU_BUTTON"],
-
-                callback_data=f"forceclose {videoid}|{user_id}",
-
-            ),
-
-        ]
 
     ]
 
@@ -824,15 +813,9 @@ def playlist_markup(_, videoid, user_id, ptype, channel, fplay):
 
         [
 
-            InlineKeyboardButton(
+          
 
-                text=_["CLOSE_BUTTON"],
-
-                callback_data=f"forceclose {videoid}|{user_id}",
-
-            ),
-
-        ],
+       
 
     ]
 
@@ -888,13 +871,7 @@ def slider_markup(
 
             ),
 
-            InlineKeyboardButton(
-
-                text=_["CLOSE_BUTTON"],
-
-                callback_data=f"forceclose {query}|{user_id}",
-
-            ),
+           
 
             InlineKeyboardButton(
 
