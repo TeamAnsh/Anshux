@@ -1,7 +1,7 @@
 {
     "name": "🌹⃝𖣔𝐕𝐈𝐏 𝐌𝐔𝐒𝐈𝐂🥀⛦⃕‌🇮🇳",
     "description": "A Telegram Music Player Bot, written in Python with Pyrogram and Py-Tgcalls.",
-    "logo": "https://te.legra.ph/file/3a131483d8a27dbf41b3a.jpg",
+    "logo": "https://telegra.ph/file/3fb767d22ac5dd9bd36f2.jpg",
     "keywords": [
     "python3",
     "telegram",
@@ -77,7 +77,7 @@
       },
       "START_IMG_URL": {
         "description": "𝐅𝐈𝐋𝐋 𝐇𝐄𝐑𝐄 𝐘𝐎𝐔𝐑 𝐒𝐓𝐀𝐑𝐓 𝐁𝐎𝐓 𝐈𝐌𝐀𝐆𝐄 𝐔𝐑𝐋, 𝐆𝐄𝐓 𝐈𝐓 𝐅𝐑𝐎𝐌 ;- t.me/vTelegraphBot",
-        "value": "https://te.legra.ph/file/ecdeac045f4045c198bd6.jpg",
+        "value": "https://telegra.ph/file/7cb2bcbf8aca280137ece.jpg",
         "required": false
       },
       "LOG_GROUP_ID": {
