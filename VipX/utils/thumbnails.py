@@ -29,7 +29,7 @@ def add_corners(im):
     mask = mask.resize(im.size, Image.LANCZOS)
     mask = ImageChops.darker(mask, im.split()[-1])
     im.putalpha(mask)
-    
+
 
 async def gen_thumb(videoid, user_id):
     if os.path.isfile(f"cache/{videoid}_{user_id}.png"):
@@ -50,13 +50,13 @@ async def gen_thumb(videoid, user_id):
                 duration = "Unknown"
             thumbnail = result["thumbnails"][0]["url"].split("?")[0]
             try:
-                result["viewCount"]["short"]
+                views = result["viewCount"]["short"]
             except:
-                pass
+                views = "Unknown Views"
             try:
-                result["channel"]["name"]
+                channel = result["channel"]["name"]
             except:
-                pass
+                channel = "Unknown Channel"
 
         async with aiohttp.ClientSession() as session:
             async with session.get(thumbnail) as resp:
@@ -79,13 +79,13 @@ async def gen_thumb(videoid, user_id):
         d = np.array(a)
         e = np.dstack((c, d))
         f = Image.fromarray(e)
-        x = f.resize((307, 307))
+        x = f.resize((200, 200))
 
         youtube = Image.open(f"cache/thumb{videoid}.png")
         bg = Image.open(f"VipX/assets/vipx.png")
         image1 = changeImageSize(1280, 720, youtube)
         image2 = image1.convert("RGBA")
-        background = image2.filter(filter=ImageFilter.BoxBlur(30))
+        background = image2.filter(filter=ImageFilter.BoxBlur(10))
         enhancer = ImageEnhance.Brightness(background)
         background = enhancer.enhance(0.6)
 
@@ -109,61 +109,55 @@ async def gen_thumb(videoid, user_id):
 
         crop_img = Image.open(f"cache/cropped{videoid}.png")
         logo = crop_img.convert("RGBA")
-        logo.thumbnail((370, 400), Image.LANCZOS)
-        width = int((1280 - 400) / 20)
+        logo.thumbnail((1, 1), Image.LANCZOS)
+        width = int((1280 - 1) / 2)
         background = Image.open(f"cache/temp{videoid}.png")
-        background.paste(logo, (width + 1, 40), mask=logo)
-        background.paste(x, (53, 365), mask=x)
+        background.paste(logo, (width + 3, 290), mask=logo)
+        background.paste(x, (1050, 250), mask=x)
         background.paste(image3, (0, 0), mask=image3)
 
         draw = ImageDraw.Draw(background)
-        font = ImageFont.truetype("VipX/assets/font2.ttf", 50)
-        ImageFont.truetype("VipX/assets/font2.ttf", 30)
-        arial = ImageFont.truetype("VipX/assets/font2.ttf", 45)
-        ImageFont.truetype("VipX/assets/font.ttf", 30)
-        name_font = ImageFont.truetype("VipX/assets/font.ttf", 30)
-        para = textwrap.wrap(title, width=30)
+        font = ImageFont.truetype("VipX/assets/font2.ttf", 37)
+        ImageFont.truetype("VipX/assets/font2.ttf", 62)
+        arial = ImageFont.truetype("VipX/assets/font2.ttf", 26)
+        ImageFont.truetype("VipX/assets/font.ttf", 26)
+        para = textwrap.wrap(title, width=28)
         try:
             draw.text(
-                (590, 80),
-                f"Playing Now Baby...",
-                fill="red",
-                stroke_width=1,
-                stroke_fill="red",
-                font=font,
+                (55, 560),
+            f"{channel} | {views[:23]}",
+            (255, 255, 255),
+            font=arial,
             )
             if para[0]:
                 text_w, text_h = draw.textsize(f"{para[0]}", font=font)
                 draw.text(
-                    ((1280 - text_w) / 1.2, 155),
-                    f"{para[0]}",
+                    ((1280 - 1115) / 3.50, 620),
+                    f"{para[0]} {para[1]}",
                     fill="white",
                     stroke_width=1,
-                    stroke_fill="blue",
+                    stroke_fill="white",
                     font=font,
                 )
             if para[1]:
                 text_w, text_h = draw.textsize(f"{para[1]}", font=font)
                 draw.text(
-                    ((1280 - text_w) / 1, 600200),
+                    ((1280 - text_w) / 2, 60000),
                     f"{para[1]}",
                     fill="white",
                     stroke_width=1,
-                    stroke_fill="red",
+                    stroke_fill="white",
                     font=font,
                 )
         except:
             pass
         text_w, text_h = draw.textsize(f"Duration: {duration} Mins", font=arial)
         draw.text(
-            ((1280 - text_w) / 1.5, 235),
-            f"Duration:- {duration} Minutes",
-            fill="green",
-            stroke_width=1,
-            stroke_fill="green",
+            ((1280 - 190) / 1, 685),
+            f"             {duration} ",
+            fill="white",
             font=arial,
-         )
-       
+        )
         try:
             os.remove(f"cache/thumb{videoid}.png")
         except:
@@ -187,20 +181,20 @@ async def gen_qthumb(videoid, user_id):
                 title = re.sub("\W+", " ", title)
                 title = title.title()
             except:
-               title = "Unsupported Title"
+                title = "Unsupported Title"
             try:
                 duration = result["duration"]
             except:
                 duration = "Unknown"
             thumbnail = result["thumbnails"][0]["url"].split("?")[0]
             try:
-                result["viewCount"]["short"]
+                views = result["viewCount"]["short"]
             except:
-                pass
+                views = "Unknown Views"
             try:
-                result["channel"]["name"]
+                channel = result["channel"]["name"]
             except:
-                pass
+                channel = "Unknown Channel"
 
         async with aiohttp.ClientSession() as session:
             async with session.get(thumbnail) as resp:
@@ -223,13 +217,13 @@ async def gen_qthumb(videoid, user_id):
         d = np.array(a)
         e = np.dstack((c, d))
         f = Image.fromarray(e)
-        x = f.resize((307, 307))
+        x = f.resize((200, 200))
 
         youtube = Image.open(f"cache/thumb{videoid}.png")
         bg = Image.open(f"VipX/assets/vipx.png")
         image1 = changeImageSize(1280, 720, youtube)
         image2 = image1.convert("RGBA")
-        background = image2.filter(filter=ImageFilter.BoxBlur(30))
+        background = image2.filter(filter=ImageFilter.BoxBlur(10))
         enhancer = ImageEnhance.Brightness(background)
         background = enhancer.enhance(0.6)
 
@@ -253,57 +247,53 @@ async def gen_qthumb(videoid, user_id):
 
         crop_img = Image.open(f"cache/cropped{videoid}.png")
         logo = crop_img.convert("RGBA")
-        logo.thumbnail((370, 400), Image.LANCZOS)
-        width = int((1280 - 400) / 20)
+        logo.thumbnail((1, 1), Image.LANCZOS)
+        width = int((1280 - 1) / 2)
         background = Image.open(f"cache/temp{videoid}.png")
-        background.paste(logo, (width + 1, 40), mask=logo)
-        background.paste(x, (53, 365), mask=x)
+        background.paste(logo, (width + 3, 290), mask=logo)
+        background.paste(x, (1050, 250), mask=x)
         background.paste(image3, (0, 0), mask=image3)
 
         draw = ImageDraw.Draw(background)
-        font = ImageFont.truetype("VipX/assets/font2.ttf", 50)
-        ImageFont.truetype("VipX/assets/font2.ttf", 30)
-        arial = ImageFont.truetype("VipX/assets/font2.ttf", 45)
-        ImageFont.truetype("VipX/assets/font.ttf", 30)
-        para = textwrap.wrap(title, width=30)
+        font = ImageFont.truetype("VipX/assets/font2.ttf", 37)
+        ImageFont.truetype("VipX/assets/font2.ttf", 62)
+        arial = ImageFont.truetype("VipX/assets/font2.ttf", 26)
+        ImageFont.truetype("VipX/assets/font.ttf", 26)
+        para = textwrap.wrap(title, width=28)
         try:
             draw.text(
-                (590, 80),
-                f"Next Song Baby...",
-                fill="red",
-                stroke_width=1,
-                stroke_fill="red",
-                font=font,
+            (55, 560),
+            f"{channel} | {views[:23]}",
+            (255, 255, 255),
+            font=arial,
             )
             if para[0]:
                 text_w, text_h = draw.textsize(f"{para[0]}", font=font)
                 draw.text(
-                    ((1280 - text_w) / 1.2, 155),
-                    f"{para[0]}",
+                    ((1280 - 1115) / 3.50, 620),
+                    f"{para[0]} {para[0]}",
                     fill="white",
                     stroke_width=1,
-                    stroke_fill="blue",
+                    stroke_fill="white",
                     font=font,
                 )
             if para[1]:
                 text_w, text_h = draw.textsize(f"{para[1]}", font=font)
                 draw.text(
-                    ((1280 - text_w) / 1, 620000),
+                    ((1280 - text_w) / 2, 6000),
                     f"{para[1]}",
                     fill="white",
                     stroke_width=1,
-                    stroke_fill="red",
+                    stroke_fill="white",
                     font=font,
-        )
+                )
         except:
             pass
         text_w, text_h = draw.textsize(f"Duration: {duration} Mins", font=arial)
         draw.text(
-            ((1280 - text_w) / 1.5, 235),
-            f"Duration:- {duration} Minutes",
-            fill="green",
-            stroke_width=1,
-            stroke_fill="green",
+            ((1280 - 190) / 1, 685),
+            f"            {duration} ",
+            fill="white",
             font=arial,
         )
 
